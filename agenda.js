@@ -7,7 +7,6 @@ class Contato{
         this.email = email;
     }
 }
-// Criando heranças com Contato
 class Cliente extends Contato{
     constructor(nome, telefone, email, empresa){
         super(nome, telefone, email);
@@ -71,13 +70,30 @@ class Agenda{
         console.log(" 1. Cliente ");
         console.log(" 2. Amigo ");
         console.log(" 3. Colega de Trabalho ");
-
+    
         let tipo = Number(prompt(""));
 
         let novoContato;
 
         // Obtendo informações do usúarios
         let nome = prompt("Digite o nome do contato: ");
+
+        let nomeRepetido = false;
+    
+        for(let i = 0; i < this.contatos.length; i++){
+            if(nome === this.contatos[i].nome){
+                nomeRepetido = true;
+                break;
+            }
+        }
+
+        if(nomeRepetido){
+            console.log("O nome já está em uso. Não é possível adicionar um contato com o mesmo nome. ");
+            console.log("");
+            return;
+        }
+
+
         let telefone = parseInt(prompt("Digite o número de telefone do contato: "));
         let email = prompt("Digite o e-mail do contato: ");
 
@@ -96,9 +112,9 @@ class Agenda{
                 let departamento = prompt("Digite o nome do departamento do colega:");
                 novoContato = new ColegaTrabalho(nome, telefone, email, departamento);
                 break;
-
             default:
                     console.log("Essa opção não existe! Tente novamente");
+                    break;
         }
         
         this.contatos.push(novoContato);
@@ -154,6 +170,8 @@ class Agenda{
                 default:
                     console.log("Tipo de contato não reconhecido. ");
             }
+
+               
 
             // Aplica as edições, se fornecidas
             if(novoNome){
