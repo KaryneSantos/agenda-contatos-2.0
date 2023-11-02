@@ -9,9 +9,12 @@ Integrantes:
    
 2. Sim, o default do switch do adicionar tipo não está lendo e não conseguimos resolver ele a tempo.
    
-3. Aline: A experiência foi boa, com base em pesquisa conseguimos aplicar novos métodos, por exemplo: Trocar o console.log por return em determinadas condições, conseguimos aplicar a herança de forma coerente.
-     Rayanne: Gostei bastante do projeto, algo que fez eu colocar em prática todo o meu conhecimento em relação as Heranças, já que tinha encontrado dificuldades ao caminho das aulas.
-     Samuel:
+3.
+   * Aline: A experiência foi boa, com base em pesquisa conseguimos aplicar novos métodos, por exemplo: Trocar o console.log por return em determinadas condições, conseguimos aplicar a herança de forma coerente.
+   
+    * Rayanne: Gostei bastante do projeto, algo que fez eu colocar em prática todo o meu conhecimento em relação as Heranças, já que tinha encontrado dificuldades ao caminho das aulas.
+
+    * Samuel:
    
 4. Enfrentamos algumas dificuldades de acessar os dados da classes de herança, para conseguir editar.
   
