@@ -1,6 +1,8 @@
 Integrantes:
 * Aline Maria (Função: Desenvolvedor, implementou a classe Amigo e ficou responsável em criar as sobrescritas da classe e organizou no método adicionarContato na agenda);
+  
 * Rayanne Karyne (Função: Desenvolvedor, implementou a classe ColegaTrabalho e ficou responsável em criar as sobrescritas da classe e organizou no método adicionarContato na agenda e atualizar o método editarContato);
+  
 * Samuel Ferreira (Função: Desenvolvedor, implementou a classe Cliente e ficou responsável em criar as sobreescritas da classe e organizou no método adicionarContato na agenda);
 
 1. Sim, tudo que foi pedido foi realizado com sucesso.
