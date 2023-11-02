@@ -7,6 +7,7 @@ class Contato{
         this.email = email;
     }
 }
+// Criando heranças com Contato
 class Cliente extends Contato{
     constructor(nome, telefone, email, empresa){
         super(nome, telefone, email);
@@ -14,6 +15,12 @@ class Cliente extends Contato{
     }
     toString(){
         return(`Nome: ${this.nome}, Telefone: ${this.telefone}, Email: ${this.email}, Empresa: ${this.empresa}`);
+    }
+    setEmpresa(novaEmpresa){
+        this.empresa = novaEmpresa;
+    }
+    getTipo(){
+        return 'Cliente';
     }
 }
 
@@ -25,6 +32,12 @@ class Amigo extends Contato{
     toString(){
         return(`Nome: ${this.nome}, Telefone: ${this.telefone}, Email: ${this.email}, Data Nascimento: ${this.dataDeNascimento}`);
     }
+    setDataDeNascimento(novaDataNascimento){
+        this.dataDeNascimento = novaDataNascimento;
+    }
+    getTipo(){
+        return 'Amigo';
+    }
 }
 
 class ColegaTrabalho extends Contato {
@@ -35,6 +48,12 @@ class ColegaTrabalho extends Contato {
 
     toString(){
         return(`Nome: ${this.nome}, Telefone: ${this.telefone}, Email: ${this.email}, Departamento: ${this.departamento}`);
+    }
+    setDepartamento(novoDepartamento){
+        this.departamento = novoDepartamento;
+    }
+    getTipo(){
+        return 'ColegaTrabalho';
     }
 }
 
@@ -110,6 +129,7 @@ class Agenda{
         // Busca o indice do contato a ser editado
         let editar = (contato) => contato.nome.toLowerCase() === nome.toLowerCase();
         let index = this.contatos.findIndex(editar);
+        let tipoContato = this.contatos[index].getTipo();
 
         // Verifica se o contato foi encontrado
         if(index !== -1){
@@ -117,6 +137,23 @@ class Agenda{
             let novoNome = prompt("Digite o novo nome (ou clique enter para continuar com o mesmo): ");
             let novoTelefone = parseInt(prompt("Digite o novo telefone (ou clique enter para continuar com o mesmo): "));
             let novoEmail = prompt("Digite o novo e-mail (ou clique enter para continuar com o mesmo): ");
+
+            switch(tipoContato){
+                case 'Cliente':
+                    let editarEmpresa = prompt("Digite o novo nome da empresa (ou clique enter para continuar com o mesmo): ");
+                    this.contatos[index].setEmpresa(editarEmpresa);
+                    break;
+                case 'Amigo':
+                    let editarNascimento = prompt("Digite o nova Data de Nascimento (ou clique enter para continuar com o mesmo): ");
+                    this.contatos[index].setDataDeNascimento(editarNascimento);
+                    break;
+                case 'colegaTrabalho':
+                    let editarDepartamento = prompt("Digite o novo nome do departamento (ou clique enter para continuar com o mesmo): ");
+                    this.contatos[index].setDepartamento(editarDepartamento);
+                    break;
+                default:
+                    console.log("Tipo de contato não reconhecido. ");
+            }
 
             // Aplica as edições, se fornecidas
             if(novoNome){
@@ -171,11 +208,7 @@ class Agenda{
             console.log("Contato encontrado: ");
             // Exibi o contato encontrado
             index.forEach(contato => {
-                // console.log(`Nome: ${contato.nome}, Telefone ${contato.telefone}, E-mail: ${contato.email}`);
-                for(var i = 0; i < this.contatos.length; i++){
-                    let contato = this.contatos.toString();
-                    console.log(contato);
-                }
+                console.log(contato.toString());
             })
         } else {
             console.log("Nenhum contato encontrado com esse nome.");
